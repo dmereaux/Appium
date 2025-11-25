@@ -7,8 +7,8 @@ Test Teardown     Remove Application    dev.flutter.example.androidfullscreen
 *** Variables ***
 ${flutter}      id=dev.flutter.example.androidfullscreen:id/launch_button
 ${exit}      accessibility_id=Exit this screen
-${NBTap}      xpath=//android.view.View[@index="2"]
-${Action}      accessibility_id=Tap me!
+${NBTap}        xpath=//android.view.View[@index="2"]
+${Action}      android=UiSelector().description("Tap me!")  # accessibility_id=Tap me!
 
 
 *** Test Cases ***

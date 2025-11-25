@@ -16,10 +16,19 @@ ${appium:newCommandTimeout}    3600
 ${appium:connectHardwareKeyboard}    true
 *** Test Cases ***
 test_webWiew
+    ${x}  Get Source
+    Log To Console  ${x}
+#    recuperer le contexte webview
     Aller sur la page webview
     Vérifier le texte affiché
 
 *** Keywords ***
+recuperer le contexte webview
+    Switch To Context    NATIVE_APP
+    ${el1} =    Set Variable     android=UiSelector().text("'%23' is the percent code for ‘#‘")
+    element text should be   ${el1}  '%23' is the percent code for ‘#‘
+
+
 lancer l'application
 	Open Application	http://localhost:4723	platformName=${platformName}	platformVersion=${appium:platformVersion}	app=${app}	automationName=UIAutomator2	  chromedriverExecutable=${appium:chromedriverExecutable}
 Aller sur la page webview

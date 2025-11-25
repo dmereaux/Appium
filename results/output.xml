@@ -1,48 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on darwin)" generated="2025-11-25T12:01:36.592212" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.2 on darwin)" generated="2025-11-25T15:10:11.148047" rpa="false" schemaversion="5">
 <suite id="s1" name="Appium" source="/Users/dominiquemereaux/code/RobotFramework/Appium">
-<suite id="s1-s1" name="CoffeeTest" source="/Users/dominiquemereaux/code/RobotFramework/Appium/CoffeeTest.robot">
-<test id="s1-s1-t1" name="Café" line="29">
+<suite id="s1-s1" name="Flutter" source="/Users/dominiquemereaux/code/RobotFramework/Appium/flutter.robot">
+<test id="s1-s1-t1" name="Test Case Name" line="15">
+<kw name="ouvrir l'application" type="SETUP">
 <kw name="Open Application" owner="AppiumLibrary">
-<arg>${REMOTE_URL}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>appium:app=${appium:app}</arg>
-<arg>appium:automationName=${appium:automationName}</arg>
-<arg>appium:deviceName=${appium:deviceName}</arg>
-<arg>appium:includeSafariInWebviews=${appium:includeSafariInWebviews}</arg>
-<arg>appium:newCommandTimeout=${appium:newCommandTimeout}</arg>
-<arg>appium:connectHardwareKeyboard=${appium:connectHardwareKeyboard}</arg>
+<arg>http://127.0.0.1:4723</arg>
+<arg>platformName=Android</arg>
+<arg>appium:platformVersion=16</arg>
+<arg>appium:app=/Users/dominiquemereaux/code/appium-robot-stag/flutter/app-debug.apk</arg>
+<arg>appium:automationName=uiAutomator2</arg>
+<arg>appium:settings[disableIdLocatorAutocompletion]=${True}</arg>
+<arg>appium:ensureWebviewsHavePages=${True}</arg>
+<arg>appium:nativeWebScreenshot=${True}</arg>
+<arg>appium:newCommandTimeout=${3600}</arg>
+<arg>appium:connectHardwareKeyboard=${True}</arg>
 <doc>Opens a new application to the given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.19/guides/caps/
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | No     | alias             |</doc>
-<status status="PASS" start="2025-11-25T12:01:36.730755" elapsed="62.645488"/>
+<status status="PASS" start="2025-11-25T15:10:11.276236" elapsed="3.790099"/>
 </kw>
+<status status="PASS" start="2025-11-25T15:10:11.275861" elapsed="3.790814"/>
+</kw>
+<kw name="menu flutter">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-11-25T12:02:39.380151" level="INFO">Clicking element 'accessibility_id=Colombien'.</msg>
-<arg>accessibility_id=Colombien</arg>
+<msg time="2025-11-25T15:10:15.068795" level="INFO">Clicking element 'id=dev.flutter.example.androidfullscreen:id/launch_button'.</msg>
+<msg time="2025-11-25T15:10:15.633626" level="INFO">criteria is dev.flutter.example.androidfullscreen:id/launch_button</msg>
+<arg>${flutter}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-25T12:02:39.378127" elapsed="0.946526"/>
+<status status="PASS" start="2025-11-25T15:10:15.067675" elapsed="0.566294"/>
 </kw>
-<kw name="Element Text Should Be" owner="AppiumLibrary">
-<msg time="2025-11-25T12:02:40.327219" level="INFO">Verifying element 'xpath=//XCUIElementTypeStaticText[@name="Commence"]' contains exactly text 'Commence'.</msg>
-<msg time="2025-11-25T12:02:40.393184" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="Commence"]</msg>
-<arg>xpath=//XCUIElementTypeStaticText[@name="Commence"]</arg>
-<arg>Commence</arg>
-<doc>Verifies that the element identified by ``locator`` contains the exact text ``expected``.</doc>
-<status status="PASS" start="2025-11-25T12:02:40.325056" elapsed="0.068382"/>
+<status status="PASS" start="2025-11-25T15:10:15.067046" elapsed="0.567306"/>
 </kw>
-<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
-<doc>Closes the current application and the webdriver session.</doc>
-<status status="PASS" start="2025-11-25T12:02:40.394119" elapsed="1.066867"/>
+<kw name="recup nb tap">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-11-25T15:10:16.810154" level="INFO">xpath criteria: //android.view.View[@index="2"]</msg>
+<arg>${NBTap}</arg>
+<arg>10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-25T15:10:15.635415" elapsed="1.175247"/>
 </kw>
-<status status="PASS" start="2025-11-25T12:01:36.729344" elapsed="64.731959"/>
+<kw name="Get Element Attribute" owner="AppiumLibrary">
+<msg time="2025-11-25T15:10:16.854293" level="INFO">CAUTION: 'xpath=//android.view.View[@index="2"]' matched 2 elements - using the first element only</msg>
+<msg time="2025-11-25T15:10:16.864507" level="INFO">Element 'xpath=//android.view.View[@index="2"]' attribute 'content-desc' value 'Taps: 0' </msg>
+<msg time="2025-11-25T15:10:16.864768" level="INFO">xpath criteria: //android.view.View[@index="2"]</msg>
+<msg time="2025-11-25T15:10:16.864982" level="INFO">${nbText} = Taps: 0</msg>
+<var>${nbText}</var>
+<arg>${NBTap}</arg>
+<arg>content-desc</arg>
+<doc>Returns the element attribute using the given ``attribute``, e.g. name, value, etc.</doc>
+<status status="PASS" start="2025-11-25T15:10:16.811267" elapsed="0.053807"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-11-25T15:10:16.865877" level="INFO">${nb} = 0</msg>
+<var>${nb}</var>
+<arg>${nbText}</arg>
+<arg>${SPACE}</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-11-25T15:10:16.865364" elapsed="0.000609"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Number of taps: ${nb}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-25T15:10:16.866175" elapsed="0.000493"/>
+</kw>
+<return>
+<value>${nb}</value>
+<status status="PASS" start="2025-11-25T15:10:16.866812" elapsed="0.000199"/>
+</return>
+<msg time="2025-11-25T15:10:16.867251" level="INFO">${nb} = 0</msg>
+<var>${nb}</var>
+<status status="PASS" start="2025-11-25T15:10:15.634945" elapsed="1.232521"/>
+</kw>
+<kw name="tap me">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-25T15:10:16.869956" level="INFO">Clicking element 'android=UiSelector().description("Tap me!")'.</msg>
+<arg>${Action}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-25T15:10:16.868434" elapsed="0.065210"/>
+</kw>
+<status status="PASS" start="2025-11-25T15:10:16.867895" elapsed="0.065987"/>
+</kw>
+<kw name="verifier increment de 1 ${nb}" source_name="verifier increment de 1 ${nb}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-25T15:10:16.935157" level="INFO">${nb2} = 1</msg>
+<var>${nb2}</var>
+<arg>expression=${nb} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-25T15:10:16.934746" elapsed="0.000526"/>
+</kw>
+<kw name="Get Element Attribute" owner="AppiumLibrary">
+<msg time="2025-11-25T15:10:17.470186" level="INFO">CAUTION: 'xpath=//android.view.View[@index="2"]' matched 2 elements - using the first element only</msg>
+<msg time="2025-11-25T15:10:17.480955" level="INFO">Element 'xpath=//android.view.View[@index="2"]' attribute 'content-desc' value 'Taps: 1' </msg>
+<msg time="2025-11-25T15:10:17.481187" level="INFO">xpath criteria: //android.view.View[@index="2"]</msg>
+<msg time="2025-11-25T15:10:17.481371" level="INFO">${nbText} = Taps: 1</msg>
+<var>${nbText}</var>
+<arg>${NBTap}</arg>
+<arg>content-desc</arg>
+<doc>Returns the element attribute using the given ``attribute``, e.g. name, value, etc.</doc>
+<status status="PASS" start="2025-11-25T15:10:16.935418" elapsed="0.546039"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${nbText}</arg>
+<arg>Taps: ${nb2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-25T15:10:17.481758" elapsed="0.000437"/>
+</kw>
+<status status="PASS" start="2025-11-25T15:10:16.934206" elapsed="0.548111"/>
+</kw>
+<kw name="Remove Application" owner="AppiumLibrary" type="TEARDOWN">
+<arg>dev.flutter.example.androidfullscreen</arg>
+<doc>Removes the application that is identified by the ``application_id``.</doc>
+<status status="PASS" start="2025-11-25T15:10:17.482813" elapsed="0.248690"/>
+</kw>
+<status status="PASS" start="2025-11-25T15:10:11.274625" elapsed="6.457141"/>
 </test>
-<status status="PASS" start="2025-11-25T12:01:36.610503" elapsed="64.866166"/>
+<status status="PASS" start="2025-11-25T15:10:11.162011" elapsed="6.574066"/>
 </suite>
-<status status="PASS" start="2025-11-25T12:01:36.595466" elapsed="64.885164"/>
+<status status="PASS" start="2025-11-25T15:10:11.150942" elapsed="6.597839"/>
 </suite>
 <statistics>
 <total>
@@ -52,7 +130,7 @@ Please check https://appium.io/docs/en/2.19/guides/caps/
 </tag>
 <suite>
 <stat name="Appium" id="s1" pass="1" fail="0" skip="0">Appium</stat>
-<stat name="CoffeeTest" id="s1-s1" pass="1" fail="0" skip="0">Appium.CoffeeTest</stat>
+<stat name="Flutter" id="s1-s1" pass="1" fail="0" skip="0">Appium.Flutter</stat>
 </suite>
 </statistics>
 <errors>
