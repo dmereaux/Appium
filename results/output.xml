@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on darwin)" generated="2025-11-25T12:01:36.592212" rpa="false" schemaversion="5">
+<suite id="s1" name="Appium" source="/Users/dominiquemereaux/code/RobotFramework/Appium">
+<suite id="s1-s1" name="CoffeeTest" source="/Users/dominiquemereaux/code/RobotFramework/Appium/CoffeeTest.robot">
+<test id="s1-s1-t1" name="Café" line="29">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>appium:app=${appium:app}</arg>
+<arg>appium:automationName=${appium:automationName}</arg>
+<arg>appium:deviceName=${appium:deviceName}</arg>
+<arg>appium:includeSafariInWebviews=${appium:includeSafariInWebviews}</arg>
+<arg>appium:newCommandTimeout=${appium:newCommandTimeout}</arg>
+<arg>appium:connectHardwareKeyboard=${appium:connectHardwareKeyboard}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-11-25T12:01:36.730755" elapsed="62.645488"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-25T12:02:39.380151" level="INFO">Clicking element 'accessibility_id=Colombien'.</msg>
+<arg>accessibility_id=Colombien</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-25T12:02:39.378127" elapsed="0.946526"/>
+</kw>
+<kw name="Element Text Should Be" owner="AppiumLibrary">
+<msg time="2025-11-25T12:02:40.327219" level="INFO">Verifying element 'xpath=//XCUIElementTypeStaticText[@name="Commence"]' contains exactly text 'Commence'.</msg>
+<msg time="2025-11-25T12:02:40.393184" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="Commence"]</msg>
+<arg>xpath=//XCUIElementTypeStaticText[@name="Commence"]</arg>
+<arg>Commence</arg>
+<doc>Verifies that the element identified by ``locator`` contains the exact text ``expected``.</doc>
+<status status="PASS" start="2025-11-25T12:02:40.325056" elapsed="0.068382"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-11-25T12:02:40.394119" elapsed="1.066867"/>
+</kw>
+<status status="PASS" start="2025-11-25T12:01:36.729344" elapsed="64.731959"/>
+</test>
+<status status="PASS" start="2025-11-25T12:01:36.610503" elapsed="64.866166"/>
+</suite>
+<status status="PASS" start="2025-11-25T12:01:36.595466" elapsed="64.885164"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Appium" id="s1" pass="1" fail="0" skip="0">Appium</stat>
+<stat name="CoffeeTest" id="s1-s1" pass="1" fail="0" skip="0">Appium.CoffeeTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,12 @@
+{
+    "TestApp1" :
+      {
+        "deviceName": "M10",
+        "app": "/Users/dominiquemereaux/AndroidStudioProjects/Dice/app/build/outputs/apk/app-debug.apk",
+        "platformVersion": "10",
+        "newCommandTimeout": 100000,
+        "autoLaunch" : "true",
+        "platformName":"Android"
+
+      }
+  }

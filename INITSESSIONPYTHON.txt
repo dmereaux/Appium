@@ -1,0 +1,20 @@
+from appium import webdriver
+from appium.options.common.base import AppiumOptions
+from appium.webdriver.common.appiumby import AppiumBy
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait 
+options = AppiumOptions()
+options.load_capabilities({
+     "platformName": "Android",
+     "appium:platformVersion": "13",
+     "appium:app": "/Users/dominiquemereaux/Downloads/PUBLIC/ExpenseAppVer1.\
+0.apk",
+     "appium:automationName": "uiautomator2",
+     "appium:ensureWebviewsHavePages": True,
+     "appium:nativeWebScreenshot": True,
+     "appium:newCommandTimeout": 3600,
+     "appium:connectHardwareKeyboard": True
+ })
+
+driver= webdriver.Remote("http://127.0.0.1:4723", options=options)

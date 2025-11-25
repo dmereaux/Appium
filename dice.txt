@@ -1,0 +1,31 @@
+*** Settings ***
+Library        AppiumLibrary
+
+*** Variables ***
+${App}   /Users/dominiquemereaux/AndroidStudioProjects/Dice/app/build/outputs/apk/app-debug.apk  
+${Server}  http://localhost:4723
+
+*** Test Cases ***
+test_demo
+    lancer l'application
+    lancer le de
+    controle du texte
+    vérifier
+    Passer en mode paysage
+	
+*** Keyword ***
+lancer l'application
+	Open Application  ${Server}	 platformName=Android	platformVersion=10	deviceName=M10	app=${App}	automationName=UiAutomator2	appPackage=com.example.dominiquemereaux.dice
+lancer le de
+		Click Element	class=android.widget.Button
+vérifier
+	${Var}	Get Text	class=android.widget.TextView
+	Should Be Equal	${Var}	6 sided dice
+controle du texte
+    Wait Until Element Is Visible      id=com.example.dominiquemereaux.dice:id/buttonRoll  
+    Element Text Should Be     id=com.example.dominiquemereaux.dice:id/buttonRoll     ROLL THE DICE...
+Passer en mode paysage
+    landscape
+
+
+

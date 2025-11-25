@@ -1,0 +1,8 @@
+{
+  "platformName": "Android",
+  "appium:platformVersion": "8",
+  "appium:deviceName": "M8",
+  "appium:app": "/Users/dominiquemereaux/AndroidStudioProjects/Dice/app/build/outputs/apk/app-debug.apk",
+  "automationName": "UIAutomator2",
+  "appPackage": "com.example.dominiquemereaux.dice"
+}

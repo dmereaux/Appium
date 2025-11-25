@@ -1,0 +1,18 @@
+*** Settings ***
+
+Library         Selenium2Library
+Library			Screenshot
+
+
+ 
+*** Test Cases ***
+
+test_demo
+
+    [Tags]  regression
+	Go To Url	https://testservices.meteorage.fr
+	Input Text	inputLogin	toto
+	Input Text	inputPassword	toto
+	Click Element	submitBtn
+	Wait Until Page Contains Element	error	20
+	Capture Page Screenshot

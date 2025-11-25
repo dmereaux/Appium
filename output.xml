@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on darwin)" generated="2025-10-08T17:42:27.642699" rpa="false" schemaversion="5">
+<suite id="s1" name="demandeAcces" source="/Users/dominiquemereaux/code/RobotFramework/Appium/demandeAcces.robot">
+<test id="s1-t1" name="Test Case Name" line="10">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>platformName=Android</arg>
+<arg>appium:platformVersion=13</arg>
+<arg>appium:app=/Users/dominiquemereaux/AndroidStudioProjects/Localisation/app/build/intermediates/apk/debug/app-debug.apk</arg>
+<arg>appium:gpsEnabled=true</arg>
+<arg>appium:automationName=UIAutomator2</arg>
+<arg>appium:ensureWebviewsHavePages=${True}</arg>
+<arg>appium:nativeWebScreenshot=${True}</arg>
+<arg>appium:newCommandTimeout=${3600}</arg>
+<arg>appium:connectHardwareKeyboard=${True}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-08T17:42:27.772742" elapsed="3.931975"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T17:42:31.705512" level="INFO">${el1} = id=com.example.localisation:id/location_button</msg>
+<var>${el1}</var>
+<arg>id=com.example.localisation:id/location_button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T17:42:31.705159" elapsed="0.000419"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-08T17:42:31.706891" level="INFO">Clicking element 'id=com.example.localisation:id/location_button'.</msg>
+<msg time="2025-10-08T17:42:32.229170" level="INFO">criteria is com.example.localisation:id/location_button</msg>
+<arg>${el1}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T17:42:31.705772" elapsed="0.523457"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T17:42:34.229804" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T17:42:32.229348" elapsed="2.000747"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-08T17:42:34.231001" level="INFO">${el2} = id=com.android.permissioncontroller:id/permission_allow_one_time_button</msg>
+<var>${el2}</var>
+<arg>id=com.android.permissioncontroller:id/permission_allow_one_time_button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-08T17:42:34.230536" elapsed="0.000516"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-08T17:42:34.232817" level="INFO">Clicking element 'id=com.android.permissioncontroller:id/permission_allow_one_time_button'.</msg>
+<msg time="2025-10-08T17:42:34.313116" level="INFO">criteria is com.android.permissioncontroller:id/permission_allow_one_time_button</msg>
+<arg>${el2}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-08T17:42:34.231262" elapsed="0.081967"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-08T17:42:36.315053" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-08T17:42:34.313453" elapsed="2.001941"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-08T17:42:36.316523" elapsed="0.202049"/>
+</kw>
+<status status="PASS" start="2025-10-08T17:42:27.772365" elapsed="8.746293"/>
+</test>
+<status status="PASS" start="2025-10-08T17:42:27.643747" elapsed="8.875181"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="demandeAcces" id="s1" pass="1" fail="0" skip="0">demandeAcces</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
